@@ -42,9 +42,14 @@ namespace Library
             this.hijos.Add(familiar);
         }
 
-        public int AceptarContador(ContadorEdad contador)
+        public int AceptarContadorEdad(Visitors visitor)
         {
-            return contador.contador + Edad;
+            return visitor.ContadorEdad + Edad;
+        }
+
+        public bool AceptarLongitudNombre(Visitors visitor)
+        {
+            return visitor.NombreMasLargo.Length < Nombre.Length;
         }
     }
 }

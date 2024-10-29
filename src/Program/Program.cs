@@ -12,8 +12,8 @@ namespace Program
             Familiar n3 = new Familiar("Hijo2", 50);
             Familiar n4 = new Familiar("Nieto1", 47);
             Familiar n5 = new Familiar("Nieto2",35);
-            Familiar n6 = new Familiar("BisNieto1",10);
-            Familiar n7 = new Familiar("BisNieto2", 18);
+            Familiar n6 = new Familiar("Nieto3",10);
+            Familiar n7 = new Familiar("Nieto4", 18);
 
             n1.AddChildren(n2);
             n1.AddChildren(n3);
@@ -24,8 +24,10 @@ namespace Program
             n3.AddChildren(n6);
             n3.AddChildren(n7);
 
-            ContadorEdad contador = new ContadorEdad(n1.Edad);
-            Console.WriteLine($"Las edades de los familiares suman: {contador.ContarEdad(n1)}");
+            Visitors visitor = new Visitors(n1);
+            Console.WriteLine($"Las edades de los familiares suman: {visitor.ContarEdad(n1)}.");
+            Console.WriteLine($"El nombre mas largo de todos es: {visitor.GetNombreMasLargo(n1)}.");
+            Console.WriteLine($"El familiar de mayor edad es: {visitor.FamiliarmayorEdad.Nombre}, {visitor.FamiliarmayorEdad.Edad} años.");
         }
     }
 }
