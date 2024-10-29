@@ -24,7 +24,7 @@ namespace Program
             n3.AddChildren(n6);
             n3.AddChildren(n7);
 
-            ContadorEdad contador = new ContadorEdad();
+            ContadorEdad contador = new ContadorEdad(n1.Edad);
             Console.WriteLine($"Las edades de los familiares suman: {contador.ContarEdad(n1)}");
         }
     }

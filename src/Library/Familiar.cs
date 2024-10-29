@@ -44,7 +44,7 @@ namespace Library
 
         public int AceptarContador(ContadorEdad contador)
         {
-            return contador.ContarEdad(this);
+            return contador.contador + Edad;
         }
     }
 }
